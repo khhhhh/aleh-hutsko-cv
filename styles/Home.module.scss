@@ -58,11 +58,13 @@
   height: 100vh;
   //margin: 20vw 0 10% 0;
 
-  img {
-    margin-right: 4em;
+  .profilePic {
     max-width: 300px;
     border-radius: 10px;
     width: 100%;
+  }
+  .picContainer {
+    margin-right: 4em;
   }
 
   div {
@@ -166,7 +168,7 @@
   .firstSec {
     flex-direction: column;
 
-    img {
+    .picContainer {
       margin: 0;
     }
   }
@@ -174,7 +176,7 @@
 
   @media screen and (max-width: 450px) {
   .firstSec{
-  img {
+  .picContainer {
     margin-top: 20%;
   }    
 }

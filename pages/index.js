@@ -16,8 +16,8 @@ export default function Home({year}) {
       <div className={styles.container}>
         <main className={styles.main}>
           <div className={styles.firstSec}>
-            <div style={{'width': 'auto'}}>
-            <Image className={styles.profilePic} src="face.jpg" alt="A human being" />
+            <div className={styles.picContainer}>
+            <Image className={styles.profilePic} src="/face.jpg" width='300px' height='400px' alt="A human being" />
             </div>
             <div>
               <h1 className={styles.title}>
