@@ -1,0 +1,81 @@
+@import 'colors.scss';
+
+.header {
+  width: 100%;
+  position: fixed;
+  padding-left: auto;
+  padding-right: auto;
+  left:0;
+  right:0;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+
+  .container {
+      max-width: 1280px;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+  
+    .logo a {
+      font-family: 'M PLUS Rounded 1c';
+      font-size: 30px;
+      line-height: 45px;
+      display: flex;
+      align-items: center;
+  
+      span {
+        padding-left: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+  
+      .ico {
+        height: 1em;
+        transition: 0.3s;
+      }
+  
+      &:hover {
+        .ico {
+          transform: rotate(20deg);
+        }
+      }
+    }
+  
+    .menu {
+      display: flex;
+  
+      a {
+        padding: 0.5rem 1rem;
+        position: relative;
+  
+        &:after {
+          position: absolute;
+          content: '';
+          height: 2px;
+          bottom: -4px;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+          width: 0%;
+          background: $clr-dark-fg;
+          transition: 0.3s;
+        }
+  
+        &:hover:after {
+          width: 60%;
+        }
+      }
+    }
+    }
+  
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .header {
+      background: $clr-dark-trans-bg;
+      color: $clr-dark-fg;
+    }
+  }

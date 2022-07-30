@@ -1,22 +1,23 @@
+@import 'colors.scss';
+
 .container {
   padding: 0 2rem;
 }
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .footer {
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid $clr-dark-fg2;
   justify-content: center;
   align-items: center;
 }
@@ -26,17 +27,6 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
 }
 
 .title {
@@ -60,17 +50,79 @@
   background: #fafafa;
   border-radius: 5px;
   padding: 0.75rem;
+  margin: 1rem auto;
   font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-.grid {
+.firstSec {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  width: 100%;
+  height: 100vh;
+  //margin: 20vw 0 10% 0;
+
+  img {
+    margin-right: 4em;
+    max-width: 300px;
+    border-radius: 10px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.secondSec {
+  margin-bottom: 1rem;
+  text-align: justify;
+  max-width: 500px;
+
+
+  table {
+    width: 100%;
+
+    tr td {
+      text-align: right;
+
+      &:first-of-type {
+        font-weight: bold;
+        text-align: left;
+
+      }
+    }
+  }
+
+  a {
+    color: #fabd2f;
+  }
+
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    display: inline-block;
+    text-align: left;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 2px;
+      bottom: -7px;
+      margin: 0 auto;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      height: 3px;
+      background: $clr-dark-fg;
+
+    }
+  }
 }
 
 .card {
@@ -115,15 +167,34 @@
   }
 }
 
+@media (max-width: 820px) {
+  .firstSec {
+    flex-direction: column;
+
+    img {
+      margin: 0;
+    }
+  }
+}
+
 @media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
+  .container {
+    background-color: $clr-dark-bg;
+    color: $clr-dark-fg;
   }
+
   .code {
-    background: #111;
+    background-color: $clr-dark-bg1;
   }
-  .logo img {
-    filter: invert(1);
+}
+
+@media (prefers-color-scheme: light) {
+  .container {
+    background-color: $clr-light-bg;
+    color: $clr-light-fg;
+  }
+
+  .code {
+    background-color: $clr-dark-fg;
   }
 }
