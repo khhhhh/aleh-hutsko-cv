@@ -39,10 +39,6 @@ export default function Home({year}) {
               </div>
             </div>
             <div>
-              <h3>Work</h3>
-              <div>Right now i&apos;m working in a Polish company called <a href='https://zetolublin.pl/' rel="noreferrer" target="_blank">Zeto Lublin</a>.</div>
-            </div>
-            <div>
               <h3>Technologies</h3>
               <div>
               I&apos;ve been using .Net as my primary technology for most of my career.
