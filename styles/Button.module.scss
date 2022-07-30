@@ -1,34 +1,33 @@
-@import 'colors.scss';
-
 .button {
-    background-color: $clr-dark-fg3;
+    background-color: var(--clr-fg3);
+    color: var(--clr-bg);
     border: none;
     border-radius: 7px;
     padding: 0.5rem 1rem;
     display: inline-flex;
 
     &:hover {
-        background-color: $clr-dark-fg2;
-        box-shadow: $clr-dark-fg2 1.95px 1.95px 2.6px;
+        background-color: var(--clr-fg2);
+        box-shadow: var(--clr-bg2) 1.95px 1.95px 2.6px;
     }
 }
 
-@media (prefers-color-scheme: dark) {
-  .button {
-    background-color: $clr-dark-fg3;
-    color: $clr-dark-bg;
-    &:hover {
-        background-color: $clr-dark-fg2;
-    }
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   .button {
+//     background-color: var(--clr-fg3);
+//     color: var(--clr-bg);
+//     &:hover {
+//         background-color: var(--clr-fg2);
+//     }
+//   }
+// }
 
-@media (prefers-color-scheme: light) {
-  .button {
-    background-color: $clr-light-fg3;
-    color: $clr-light-bg;
-    &:hover {
-        background-color: $clr-light-fg2;
-    }
-  }
-}
+// @media (prefers-color-scheme: light) {
+//   .button {
+//     background-color: var(--clr-bg3);
+//     color: var(--clr-fg1);
+//     &:hover {
+//         background-color: var(--clr-bg2);
+//     }
+//   }
+// }
