@@ -3,17 +3,8 @@ import Link from 'next/link'
 import React from 'react';
 import Button from './Button';
 
-export default function Header () {
-  const [icon, setIcon] = React.useState('dark_mode');
-  const [styleMenu, setStyleMenu] = React.useState([styles.menu]);
 
-  function showHide() {
-    if (styleMenu.length > 1)
-      setStyleMenu([styles.menu]);
-    else
-      setStyleMenu([styles.menu, styles.menushow].join(' '));
-  }
-  function switchTheme(e) {
+const getMode = () => {
     let mode = localStorage.getItem('theme');
     if (!mode) {
       var color = getComputedStyle(document.documentElement, null).getPropertyValue('background-color');
@@ -23,15 +14,40 @@ export default function Header () {
       else
         mode = 'light';
     }
+    return mode;
+}
 
+export default function Header () {
+  const [icon, setIcon] = React.useState('');
+  const [styleMenu, setStyleMenu] = React.useState([styles.menu]);
+
+  React.useEffect(() => {
+    let mode = getMode();
+    console.log(mode);
+    if (mode == 'light') {
+      setIcon('far fa-sun');
+    } else {
+      setIcon('far fa-moon');
+    }
+  }, []);
+
+  function showHide() {
+    if (styleMenu.length > 1)
+      setStyleMenu([styles.menu]);
+    else
+      setStyleMenu([styles.menu, styles.menushow].join(' '));
+  }
+
+  function switchTheme() {
+    let mode = getMode();
     if (mode == 'light') {
       localStorage.setItem('theme', 'dark');
       document.documentElement.setAttribute('data-theme', 'dark');
-      setIcon('dark_mode');
-    } else if (mode == 'dark') {
+      setIcon('far fa-moon');
+    } else {
       localStorage.setItem('theme', 'light');
       document.documentElement.setAttribute('data-theme', 'light');
-      setIcon('light_mode');
+      setIcon('far fa-sun');
     }
   }
 
@@ -59,10 +75,9 @@ export default function Header () {
           </Link>
           <a href='https://www.linkedin.com/in/aleh-hutsko/' rel="noreferrer" target="_blank"> LinkedIn </a>
           <a href='https://github.com/khhhhh/' rel="noreferrer" target="_blank"> GitHub </a>
-          <i className="fa-solid fa-moon"></i>
         </div>
         <Button onClick={() => switchTheme()}>
-          <span className="material-symbols-outlined"> {icon} </span>
+          <i className={icon}></i>
         </Button>
         <Button id={styles.hamburger} onClick={() => showHide()}>
           <svg viewBox="0 0 80 80" width="18" height="18">

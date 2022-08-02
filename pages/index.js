@@ -23,8 +23,8 @@ export default function Home({year}) {
               <h1 className={styles.title}>
                 Aleh Hutsko
               </h1>
-              <div className={styles.code} >Hi, I&apos;m a Web Developer from Belarus!</div>
-              <a href='mailto:aleh.hutsko@live.umcs.edu.pl'><Button>Contact Me!</Button></a>
+              <h2 className={styles.code} >Hi, I&apos;m a Web Developer from Belarus!</h2>
+              <a href='mailto:oleg.hutsko@gmail.com'><Button>Contact Me!</Button></a>
             </div>
           </div>
 
@@ -32,8 +32,8 @@ export default function Home({year}) {
             <div>
               <h3>About me</h3>
               <div>
-              I&apos;m just a regular guy who likes to do programming. I like to create 
-              and learn new technologies and development methods. Friendly, 
+              I&apos;m just a regular guy who likes to do programming. I like 
+              to learn new technologies and create new things. I&apos;m friendly, 
               humble and hard working. In my free time from teaching and 
               development I like to travel, learn foreign languages and play guitar.
               </div>
@@ -41,8 +41,8 @@ export default function Home({year}) {
             <div>
               <h3>Technologies</h3>
               <div>
-              I&apos;ve been using .Net as my primary technology for most of my career.
-              I am currently also learning React, Next.Js, and many other technologies.
+              I&apos;ve been using .NET as my primary technology for most of my career.
+              I&apos;m currently also learning React, Next.Js, and many other technologies.
                 <div className={styles.icons}>
                   <i className="devicon-dotnetcore-plain"></i>
                   <i className="devicon-csharp-plain"></i>
@@ -93,13 +93,13 @@ export default function Home({year}) {
             </div>
           </div>
         </main>
-        <footer className={styles.footer}>© {year} Aleh Hutsko. All Rights Reserved.</footer>
+        <footer className={styles.footer}>© {year} Aleh Hutsko.</footer>
       </div>
     </>
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   let year = new Date().getFullYear();
   return {
     props: {year} 
