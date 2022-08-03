@@ -17,7 +17,7 @@ const getMode = () => {
     return mode;
 }
 
-export default function Header () {
+export default function Header() {
   const [icon, setIcon] = React.useState('');
   const [styleMenu, setStyleMenu] = React.useState([styles.menu]);
 
@@ -35,7 +35,7 @@ export default function Header () {
     if (styleMenu.length > 1)
       setStyleMenu([styles.menu]);
     else
-      setStyleMenu([styles.menu, styles.menushow].join(' '));
+      setStyleMenu([styles.menushow, styles.menu].join(' '));
   }
 
   function switchTheme() {
