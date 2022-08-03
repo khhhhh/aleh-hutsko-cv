@@ -156,6 +156,7 @@
       background-color: var(--clr-bg1);
       border-radius: 5px;
       transition: all 0.3s;
+      justify-content: space-around;
       a::after{
         display: none;
       }
