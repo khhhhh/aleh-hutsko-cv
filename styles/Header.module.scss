@@ -149,7 +149,7 @@
       height: 0;
       overflow: hidden;
       position: absolute;
-      width: 30%;
+      min-width: 30%;
       top: 70px;
       right: 5px;
       border: 0px solid var(--clr-fg1);
