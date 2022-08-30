@@ -5,6 +5,20 @@
   transition: background-color 0.3s;
 }
 
+
+#hExperience{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  & div:last-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+  }
+}
+
 .main {
   min-height: 100vh;
   flex: 1;
