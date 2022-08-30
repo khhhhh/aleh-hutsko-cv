@@ -68,11 +68,11 @@ export default function Header() {
 
       <div style={{ 'display': 'flex', 'alignItems': 'center' }}>
         <div className={styleMenu}>
-          <Link href=''>
+          {/* <Link href=''>
             <a>
               Projects
             </a>
-          </Link>
+          </Link> */}
           <a href='https://www.linkedin.com/in/aleh-hutsko/' rel="noreferrer" target="_blank"> LinkedIn </a>
           <a href='https://github.com/khhhhh/' rel="noreferrer" target="_blank"> GitHub </a>
         </div>
