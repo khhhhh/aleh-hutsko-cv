@@ -4,7 +4,7 @@ export default function Document() {
     return (
         <Html>
             <Head>
-                <link rel="icon" href="/test.svg" />
+                <link rel="icon" href="icons/logo.svg" />
                 <link href='https://fonts.googleapis.com/css?family=M PLUS Rounded 1c&display=swap' rel='stylesheet' />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
                 <script src='/scripts/darkmode.js' async></script>

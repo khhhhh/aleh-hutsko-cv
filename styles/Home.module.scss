@@ -6,7 +6,7 @@
 }
 
 
-#hExperience{
+#hExperience {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -33,6 +33,24 @@
   justify-content: center;
   text-align: center;
   color: var(--clr-fg3);
+
+  .footerRodo {
+    max-width: 800px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    &::after {
+      content: '';
+      width: 200px;
+      margin: 0.9rem 0;
+      margin-left: auto;
+      margin-right: auto;
+      height: 2px;
+      display: block;
+      background-color: var(--clr-bg2);
+    }
+  }
 }
 
 .title {
@@ -78,6 +96,7 @@
     border-radius: 10px;
     width: 100%;
   }
+
   .picContainer {
     margin-right: 4em;
   }
@@ -94,6 +113,8 @@
   text-align: justify;
   max-width: 500px;
 
+  display: flex;
+  flex-direction: column;
 
   table {
     width: 100%;
@@ -113,8 +134,12 @@
     color: var(--clr-link);
   }
 
-  display: flex;
-  flex-direction: column;
+  .chipsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    padding: 0;
+  }
 
   h3 {
     display: inline-block;
@@ -167,6 +192,35 @@
   line-height: 1.5;
 }
 
+.chip {
+  background-color: var(--clr-fg);
+  color: var(--clr-bg);
+  font-weight: bold;
+  font-size: 0.9rem;
+
+  width: fit-content;
+  padding: 0.3rem 0.5rem;
+  margin: 0.5rem 0.5rem;
+  list-style-type: none;
+
+  border-radius: 100px;
+}
+
+.chip_sec {
+  background-color: var(--clr-bg2);
+  color: var(--clr-fg1);
+  font-weight: bold;
+  font-size: 0.9rem;
+
+  width: fit-content;
+  padding: 0.3rem 0.5rem;
+  margin: 0.5rem 0.5rem;
+  list-style-type: none;
+
+  border-radius: 100px;
+  border: 1px solid var(--clr-fg2);
+}
+
 .logo {
   height: 1em;
   margin-left: 0.5rem;
@@ -189,10 +243,16 @@
   }
 }
 
-  @media screen and (max-width: 450px) {
-  .firstSec{
-  .picContainer {
-    margin-top: 20%;
-  }    
-}
+@media screen and (max-width: 450px) {
+  .firstSec {
+    .picContainer {
+      margin-top: 20%;
+    }
+
+  }
+
+  .secondSec tr td {
+      padding-bottom: 10px;
+    }
+
 }

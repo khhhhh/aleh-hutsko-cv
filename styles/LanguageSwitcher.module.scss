@@ -1,0 +1,49 @@
+.langSwitcher {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.selectedLang {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.lang {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+}
+
+
+.menu {
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    border: 0px solid var(--clr-fg1);
+    background-color: var(--clr-bg1);
+    border-radius: 5px;
+    transition: all 0.3s;
+    justify-content: space-around;
+
+    a::after {
+        display: none;
+    }
+}
+
+.menushow {
+    height: 10em !important;
+    border-width: 1px !important;
+}
+
+.showMenu {
+    display: none;
+}

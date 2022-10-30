@@ -1,4 +1,5 @@
 import MainPage from './MainPage'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Home({year, experience}) {
   return (
@@ -8,14 +9,14 @@ export default function Home({year, experience}) {
   )
 }
 
-export async function getServerSideProps() {
+
+export async function getServerSideProps({locale}) {
 
   let today = new Date().getUTCFullYear();
 
   let firstDayAtZeto = Date.now() - new Date('2021/08/30');
   let exp = new Date(firstDayAtZeto).getFullYear() - 1970;
-
   return {
-    props: { year:today, experience:exp}
+    props: { ...(await serverSideTranslations(locale, ['common'], null, ['en', 'ru', 'pl'])), year:today, experience:exp}
   }
 }
