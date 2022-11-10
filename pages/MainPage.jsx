@@ -55,7 +55,8 @@ export default function MainPage({ year, experience }) {
               <div>
                 {t('techs-desc')}
                 <ul className={styles.chipsWrapper}>
-                  <li className={styles.chip}>ASP.NET Core</li>
+                  <li className={styles.chip}>ASP.NET</li>
+                  <li className={styles.chip_sec}>Web Forms</li>
                   <li className={styles.chip_sec}>C#</li>
                   <li className={styles.chip_sec}>AutoMapper</li>
                   <li className={styles.chip_sec}>AutoFac</li>
@@ -70,7 +71,7 @@ export default function MainPage({ year, experience }) {
                   <li className={styles.chip_sec}>Git</li>
                   <li className={styles.chip_sec}>Redmine</li>
                 </ul>
-                <div className={styles.icons}>
+                {/* <div className={styles.icons}>
                   <i className="devicon-dotnetcore-plain"></i>
                   <i className="devicon-csharp-plain"></i>
                   <i className="devicon-visualstudio-plain"></i>
@@ -80,7 +81,7 @@ export default function MainPage({ year, experience }) {
                   <i className="devicon-css3-plain"></i>
                   <i className="devicon-git-plain-wordmark"></i>
                   <i className="devicon-vim-plain"></i>
-                </div>
+                </div> */}
               </div>
             </div>
             <div>
@@ -93,7 +94,7 @@ export default function MainPage({ year, experience }) {
                   </tr>
                   <tr>
                     <td>2019 - 2022</td>
-                    <td><a href='https://www.umcs.pl/en/' rel="noreferrer" target="_blank">{t('umcs')}</a>, {t('lublin')}, {t('poland')}</td>
+                    <td><a href='https://www.umcs.pl/en/' rel="noreferrer" target="_blank">{t('umcs')}</a> {t('licen')}, {t('lublin')}, {t('poland')}</td>
                   </tr>
                 </tbody>
               </table>
