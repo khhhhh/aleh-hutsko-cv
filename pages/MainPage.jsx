@@ -57,6 +57,7 @@ export default function MainPage({ year, experience }) {
                 <ul className={styles.chipsWrapper}>
                   <li className={styles.chip}>ASP.NET</li>
                   <li className={styles.chip_sec}>Web Forms</li>
+                  <li className={styles.chip_sec}>Win Forms</li>
                   <li className={styles.chip_sec}>C#</li>
                   <li className={styles.chip_sec}>AutoMapper</li>
                   <li className={styles.chip_sec}>AutoFac</li>
@@ -109,11 +110,11 @@ export default function MainPage({ year, experience }) {
                   </tr>
                   <tr>
                     <td>{t('polish')}</td>
-                    <td>B2</td>
+                    <td>B1</td>
                   </tr>
                   <tr>
                     <td>{t('english')}</td>
-                    <td>B2</td>
+                    <td>B1</td>
                   </tr>
                 </tbody>
               </table>
