@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useTransition } from 'react'
-import PropTypes from 'prop-types'
+import React, { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
 import Button from '../components/Button'
 import Header from '../components/Header'
@@ -9,6 +8,21 @@ import { useTranslation } from 'next-i18next';
 
 export default function MainPage({ year, experience }) {
   const { t } = useTranslation('common');
+
+  const secondSec = useRef(null);
+  const [sectionY, setSectionY] = useState(0);
+
+  function scrollToSection() {
+    console.log(sectionY);
+      window.scrollTo({top: sectionY, behavior: 'smooth'});
+  }
+
+  useEffect(() => {
+    if(secondSec.current)
+    {
+      setSectionY(secondSec.current.getBoundingClientRect().y - 65);
+    }
+  }, []);
 
   return (
     <>
@@ -33,16 +47,30 @@ export default function MainPage({ year, experience }) {
             </div>
           </div>
 
-          <div className={styles.secondSec}>
+          <Button className={styles.scrollDown} onClick={scrollToSection}><i className="fas fa-chevron-down"></i></Button>
+          <div ref={secondSec} className={styles.secondSec}>
             <div>
               <h3 id={styles.hExperience}>
                 <div>{t('work-exp')}</div>
                 <div>{experience} {experience > 1 ? t('years') : t('year')}</div></h3>
               <div>
                 {t('exp-desc')}
-                <a href='https://zetolublin.pl/'>{t('zeto')}</a>, {t('poland')}.&nbsp;
+                <a href='https://www.relativity.com/'>{t('relativity')}</a>.&nbsp;
                 {t('exp-desc-2')}
               </div>
+              <br />
+              <table>
+                <tbody>
+                  <tr>
+                    <td>05/2023 - {t('now')}</td>
+                    <td><a href='https://www.relativity.com/' rel="noreferrer" target="_blank">{t('relativity')}</a>, {t('krakow')}, {t('poland')}</td>
+                  </tr>
+                  <tr>
+                    <td>10/2021 - 04/2023</td>
+                    <td><a href='https://zetolublin.pl/' rel="noreferrer" target="_blank">{t('zeto')}</a>, {t('lublin')}, {t('poland')}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div>
               <h3>{t('about-me')}</h3>
@@ -55,9 +83,8 @@ export default function MainPage({ year, experience }) {
               <div>
                 {t('techs-desc')}
                 <ul className={styles.chipsWrapper}>
-                  <li className={styles.chip}>ASP.NET</li>
-                  <li className={styles.chip_sec}>Web Forms</li>
-                  <li className={styles.chip_sec}>Win Forms</li>
+                  <li className={styles.chip}>.NET</li>
+                  <li className={styles.chip_sec}>ASP.NET</li>
                   <li className={styles.chip_sec}>C#</li>
                   <li className={styles.chip_sec}>AutoMapper</li>
                   <li className={styles.chip_sec}>AutoFac</li>
@@ -72,17 +99,6 @@ export default function MainPage({ year, experience }) {
                   <li className={styles.chip_sec}>Git</li>
                   <li className={styles.chip_sec}>Redmine</li>
                 </ul>
-                {/* <div className={styles.icons}>
-                  <i className="devicon-dotnetcore-plain"></i>
-                  <i className="devicon-csharp-plain"></i>
-                  <i className="devicon-visualstudio-plain"></i>
-                  <i className="devicon-azure-plain"></i>
-                  <i className="devicon-typescript-plain"></i>
-                  <i className="devicon-html5-plain"></i>
-                  <i className="devicon-css3-plain"></i>
-                  <i className="devicon-git-plain-wordmark"></i>
-                  <i className="devicon-vim-plain"></i>
-                </div> */}
               </div>
             </div>
             <div>
@@ -90,12 +106,12 @@ export default function MainPage({ year, experience }) {
               <table>
                 <tbody>
                   <tr>
-                    <td>2016 - 2019</td>
-                    <td><a href='https://kbp.by/' rel="noreferrer" target="_blank">{t('kbip')}</a>, {t('minsk')}, {t('belarus')}</td>
-                  </tr>
-                  <tr>
                     <td>2019 - 2022</td>
                     <td><a href='https://www.umcs.pl/en/' rel="noreferrer" target="_blank">{t('umcs')}</a> {t('licen')}, {t('lublin')}, {t('poland')}</td>
+                  </tr>
+                  <tr>
+                    <td>2016 - 2019</td>
+                    <td><a href='https://kbp.by/' rel="noreferrer" target="_blank">{t('kbip')}</a>, {t('minsk')}, {t('belarus')}</td>
                   </tr>
                 </tbody>
               </table>
